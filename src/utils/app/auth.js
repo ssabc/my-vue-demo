@@ -9,7 +9,7 @@ import Cookies from "js-cookie";
 
 const TokenKey = "Admin-Token";
 
-console.log(a ? .t);
+// console.log(a ? .t);
 export function getToken() {
     return Cookies.get(TokenKey);
 }
