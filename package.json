@@ -3,10 +3,13 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "vue-cli-service serve",
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "dev1": "vue-cli-service serve",
+        "serve1": "vue-cli-service serve",
+        "build1": "vue-cli-service build",
+        "lint1": "vue-cli-service lint"
     },
     "dependencies": {
         "axios": "^0.24.0",
@@ -19,9 +22,6 @@
     },
     "devDependencies": {
         "@babel/preset-env": "^7.16.7",
-        "@vue/cli-plugin-babel": "~4.5.0",
-        "@vue/cli-plugin-eslint": "~4.5.0",
-        "@vue/cli-service": "~4.5.0",
         "babel-eslint": "^10.1.0",
         "babel-polyfill": "^6.26.0",
         "classlist-polyfill": "^1.2.0",
@@ -30,6 +30,8 @@
         "eslint-plugin-vue": "^6.2.2",
         "sass": "1.26.2",
         "sass-loader": "8.0.2",
+        "vite": "^2.7.10",
+        "vite-plugin-vue2": "^1.9.2",
         "vue-template-compiler": "^2.6.11"
     },
     "eslintConfig": {

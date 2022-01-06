@@ -17,19 +17,21 @@ Router.prototype.push = function push(location) {
 Vue.use(Router);
 
 // 全局Layout下的页面
-const homeChilds = require.context("./modules", false, /\.js$/);
-homeChilds.keys().forEach((key) => {
-    home.children = home.children.concat(homeChilds(key).default);
+const homeChilds =
+    import.meta.globEager("./modules/*.js")
+Object.keys(homeChilds).forEach((key) => {
+    home.children = home.children.concat(homeChilds[key].default);
 });
 
-const modulesFiles = require.context(".", false, /\.js$/);
+const modulesFiles =
+    import.meta.globEager("./*.js")
 
 let configRouters = [];
-modulesFiles.keys().forEach((key) => {
+Object.keys(modulesFiles).forEach((key) => {
     if (key === "./index.js") {
         return;
     }
-    configRouters = configRouters.concat(modulesFiles(key).default);
+    configRouters = configRouters.concat(modulesFiles[key].default);
 });
 console.log(configRouters, "系统路由");
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465

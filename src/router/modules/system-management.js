@@ -6,7 +6,7 @@
  * @Description: 系统管理
  */
 
-import Layout from "@/layout/components/index";
+import Layout from "@/layout/components/index.vue";
 
 export default [{
     path: "/system-management",

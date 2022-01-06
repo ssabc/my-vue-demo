@@ -5,17 +5,18 @@
  * @LastEditors: bohe
  * @Description: 全局组件 统一一起注册
  */
-const vueFiles = require.context("./", true, /\.vue$/),
+const vueFiles =
+    import.meta.globEager("./**.vue"),
     components = [],
     getDefaultName = (path) => {
         const n = path.slice("./".length, path.length - 4).split("-");
 
         return n.map((item) => `${item[0].toUpperCase()}${item.slice(1)}`).join("");
     };
-for (const path of vueFiles.keys()) {
+for (const path of Object.keys(vueFiles)) {
     components.push(
-        Object.assign(vueFiles(path).default, {
-            name: vueFiles(path).default.name || getDefaultName(path),
+        Object.assign(vueFiles[path].default, {
+            name: vueFiles[path].default.name || getDefaultName(path),
         })
     );
 }

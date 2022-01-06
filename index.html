@@ -1,0 +1,55 @@
+<!--
+ * @Author: bohe
+ * @Date: 2022-01-05 16:31:18
+ * @LastEditTime: 2022-01-05 16:48:59
+ * @LastEditors: bohe
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <script>
+        window.addEventListener(
+            'error',
+            function(e) {
+                if (e && e.target) {
+                    let outerHTML = e.target.outerHTML || ''
+
+                    if (
+                        location.hostname !== 'localhost' &&
+                        (~outerHTML.indexOf('src=') || ~outerHTML.indexOf('href='))
+                    ) {
+                        const currVersionKey = localStorage.getItem('currVersionKey'),
+                            versionKey = localStorage.getItem('versionKey')
+
+                        if (currVersionKey !== versionKey) {
+                            localStorage.setItem('currVersionKey', versionKey)
+                            alert('发现有新版本了,资源需要更新,请知悉~')
+                            location.reload(true)
+                        }
+                    }
+                }
+            },
+            true,
+        )
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+    <title>
+        vue-demo
+    </title>
+</head>
+
+<body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+            </noscript>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>

@@ -6,7 +6,7 @@
  * @Description: 通用布局里的页面
  */
 /* Layout */
-import Layout from "@/layout/index";
+import Layout from "@/layout/index.vue";
 
 export default {
     path: "/",
@@ -16,6 +16,6 @@ export default {
         path: "/index",
         name: "首页",
         component: () =>
-            import ( /* webpackChunkName: "home" */ "@/views/home/index"),
+            import ( /* webpackChunkName: "home" */ "@/views/home/index.vue"),
     }, ],
 };

@@ -1,7 +1,7 @@
 <!--
  * @Author: bohe
  * @Date: 2022-01-05 13:53:59
- * @LastEditTime: 2022-01-05 14:58:57
+ * @LastEditTime: 2022-01-06 14:06:42
  * @LastEditors: bohe
  * @Description: 
 -->
@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import Header from "@/layout/components/header";
-import Footer from "@/layout/components/footer";
-import Sider from "@/layout/components/sider";
+import Header from "@/layout/components/header/index.vue";
+import Footer from "@/layout/components/footer/index.vue";
+import Sider from "@/layout/components/sider/index.vue";
 
 export default {
   name: "Layout",
